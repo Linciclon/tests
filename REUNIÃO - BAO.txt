@@ -1,0 +1,209 @@
+BAO -hipervisor  - (6 Janeiro)
+
+levar para proximo nível;
+
+O bao não é estático;
+Aproveitar partes do Bao;
+foco do bao no safety-critical;
+código muito aberto;
+
+
+MisraC - coding standart! maneiras de escrever o bao!
+
+Ferramentas:
+- que verifica o coding standart;
+- Travici
+- LGTM - código;
+- Jyra - issues;
+- MisraC;
+- GitHub/GitLab;
+
+
+Coding standart:
+-
+
+Coding Review:
+-
+
+Mecanismo Trace hability:
+- tem de haver um requisito inicial que prova o porquê de aquele código estar lá;
+- rewiews;
+
+Continuous Integration:
+-(envolve automatizar coding standart e coding review)
+
+Testes:
+- framework the tests;
+-escolher plataformas virtuais;
+
+
+
+Tarefas:
+-analisar ferramentas de uso;
+
+continuous integration:
+cada vez que alguém escreve alguma coisa
+os testes correm em plataformas virtuais
+os testes são automatizados
+
+Caracteristicas de ferramentas:
+abertas/graça (principal caracteristicas);
+
+
+You can use MISRA standards to ensure your code is:
+
+    -Safe
+    -Secure
+    -Reliable
+    -Portable
+
+-------------------------------------------------
+travisci - continuous integrations
+jackins  - correr código no momento de push
+lgtm     - verificação de código
+jyra     - ajudar a lidar com issues
+coverity - misrac
+gitlab/github   - para host 
+
+
+
+
+MISRA-C 	     -> coding standarts
+tools:
+Embold -> https://embold.io/pricing-cloud 
+       -> https://embold.io/products/overview    
+	segue standart de MISRA em "self-hosted"
+	Static Analysis
+	Code Review
+	integrate with jankins /visual studio
+	open source;
+	tem uma opção de free 2 user 5 scans per day;
+	
+Reshift -> https://www.reshiftsecurity.com/pricing/
+	3 minutos de reshift video: https://www.youtube.com/watch?v=GspuLMF3Vyo&feature=youtu.be
+	integração com: circle ci / jenkins / gitlab (nisto não segue standart misrac, eles baseiam-se mais em javascript no entanto vão incorporar a linguagem c/c++)
+	free 1 user
+	n sei se é open-source
+	
+sonarqube ->https://www.sonarqube.org/features/multi-languages/c/#bug
+	    https://www.sonarqube.org/downloads/
+	    tem uma versão free no entanto não sei se inclui linguagens c nessa versão
+	    é open source:https://docs.sonarqube.org/latest/setup/install-server/
+	    
+HelixQAC  ->what is MISRAC:
+	    https://www.perforce.com/resources/qac/misra-c-cpp#what
+	    
+
+PC-lint   ->30-days free        
+
+
+
+
+
+		     -> coding style
+tools:
+
+
+
+		     ->code reviews
+tools:
+lgtm	   -> https://lgtm.com/
+	open source / free
+	
+Phacility -> https://www.phacility.com/pricing/
+	open source / free;
+	-faz mais do que o code review;
+	https://www.phacility.com/phabricator/
+	no site como sloglan neste link tem: "Discuss. Plan. Code. Review. Test."
+
+
+
+
+		     ->trace hability (github/gitlab)
+tools:
+CI faz testes
+CD gestão dos testes final 
+   gestão das versões
+
+
+
+framework de testes ->unit test
+	  	       testes de regressão
+	               testes de integração
+tools:
+
+
+	  
+	  
+########################################################################
+	  
+continuous integration: (Travis CI)
+
+Continuous Integration is the practice of merging in small code changes frequently - rather than merging in a large change at the end of a development cycle. The goal is to build healthier software by developing and testing in smaller increments. This is where Travis CI comes in.
+	  
+
+---------------------------------------
+
+CI Builds and Automation:
+
+when we run the build, Travis CI clones our GitHub repository into a brand-new virtual environment, and carries out a series of tasks to build and test our code.
+-If one task fail out build will "broke".
+-if every tasks pass our build will "passed".
+  
+note:
+CI builds can also automate other parts of your delivery workflow. This means you can have jobs depend on each other with Build Stages, set up notifications, prepare deployments after builds and many other tasks.
+	  
+-------------------------------------------
+
+words in Travis CI world:
+  
+  build - a group of jobs that run in sequence.
+  
+  stage - a group of jobs that run in parallel as pat of a sequencial build proces composed of mutiple stages
+  
+  job - an automated process 
+  
+  phase - the sequencial steps of a job
+  	->>install phase
+  	->>scrpt phase
+  	->>deploy phase
+  	
+--------------------------------------
+
+breaks of build:
+errored - a command in the before_install, install, or before_script phase returned a non-zero exit code. The job stops immediately.
+failed - a command in the script phase returned a non-zero exit code. The job continues to run until it completes.
+canceled - a user cancels the job before it completes
+
+
+1) .travis.yml file to your repository to tell Travis CI what to do!
+
+"language: c
+rvm:
+ - 2.2
+ - jc"
+
+2) Add the .travis.yml file to git, commit and push to trigger a Travis CI build:
+
+  
+3)Check the build status page to see if your build passes or fails according to the return status of the build command by visiting Travis CI and selecting your repository.
+  
+---------------------------------------
+
+https://docs.travis-ci.com/user/customizing-the-build/
+
+  
+  
+  
+  
+  
+  
+
+	  
+
+
+
+
+
+
+
