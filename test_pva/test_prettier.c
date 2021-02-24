@@ -4,5 +4,6 @@
 void main()
 {
     int a;
+    printf("hellogit");
     return 0;
 }
